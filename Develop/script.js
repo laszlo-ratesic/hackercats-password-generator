@@ -61,6 +61,12 @@ function writePassword() {
   checkArray();
 
   window.alert("🐱‍💻 Alright, alright, alright! Enjoy your new password!");
+
+  // Password Generator
+  function generatePassword() {
+    return "Hello, World."
+  };
+
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
