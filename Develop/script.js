@@ -65,17 +65,59 @@ function writePassword() {
 
   // Password Generator
   function generatePassword() {
-    let str = "";
     const lowercaseCharacters = "abcdefghijklmnopqrstuvwxyz";
     const lowercaseLength = lowercaseCharacters.length;
-    for (let i = 0; i < passwordInfo.length; i++) {
-      str += lowercaseCharacters.charAt(
-        Math.floor(Math.random() * lowercaseLength)
-      );
+
+    const uppercaseCharacters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    const uppercaseLength = uppercaseCharacters.length;
+
+    const numericCharacters = "0123456789";
+    const numericLength = numericCharacters.length;
+
+    const specialCharacters = ` !"#$%&'()*+,-./:;<=>?@[\]^_\u0060{|}~`;
+    const specialLength = specialCharacters.length;
+
+    // An alternate list of special characters for stricter password systems
+    // const altSpecialCharacters = `@%+\/'!#$^?:,(){}[]~\u0060-_.`;
+
+    var str = "";
+
+    var passwordArray = Object.values(passwordInfo);
+    passwordArray.shift();
+    var allTrue = true;
+    for (let i = 0; i < passwordArray.length; i++) {
+      if (passwordArray[i] === false) {
+        allTrue = false;
+        break;
+      }
+    }
+
+    // debugger;
+
+    if (allTrue) {
+      for (let i = 0; i < passwordInfo.length / 4; i++) {
+        str += lowercaseCharacters.charAt(
+          Math.floor(Math.random() * lowercaseLength)
+        );
+      }
+      for (let i = 0; i < passwordInfo.length / 4; i++) {
+        str += uppercaseCharacters.charAt(
+          Math.floor(Math.random() * uppercaseLength)
+        );
+      }
+      for (let i = 0; i < passwordInfo.length / 4; i++) {
+        str += numericCharacters.charAt(
+          Math.floor(Math.random() * numericLength)
+        );
+      }
+      for (let i = 0; i < passwordInfo.length / 4; i++) {
+        str += specialCharacters.charAt(
+          Math.floor(Math.random() * specialLength)
+        );
+      }
     }
     return str;
   }
-
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
