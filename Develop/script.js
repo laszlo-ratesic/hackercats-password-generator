@@ -38,18 +38,27 @@ function writePassword() {
     );
   };
 
-  // START HERE TOMORROW (today)
+  // Ensure at least one character type is selected
   characterTypes();
-  console.log(passwordInfo);
-  var passwordArray = Object.values(passwordInfo);
-  passwordArray.shift();
-  passwordArray.toString();
-  console.log(passwordArray)
-  if (!passwordArray) {
+  function checkArray() {
+    console.log(passwordInfo);
+    var passwordArray = Object.values(passwordInfo);
+    passwordArray.shift();
+    console.log(passwordArray)
+    var allFalse = true;
+    for (let i = 0; i < passwordArray.length; i++) {
+      if (passwordArray[i] === true) {
+        allFalse = false;
+        break;
+      }
+    };
+    if (allFalse) {
     window.alert("🐱‍💻 Wuh oh! You need to select at least one character type!");
-    characterTypes();
-  }
-
+      characterTypes();
+      checkArray();
+    }
+  };
+  checkArray();
 
   window.alert("🐱‍💻 Alright, alright, alright! Enjoy your new password!");
   var password = generatePassword();
