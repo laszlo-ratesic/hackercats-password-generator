@@ -157,7 +157,7 @@ function writePassword() {
 
         // ...returns true if string doesn't contain any characters from specified array
         if (!checkPassword(strArr, lowArr)) {
-          
+
           // alerts developer
           console.log("string did not include lowercase characters.");
 

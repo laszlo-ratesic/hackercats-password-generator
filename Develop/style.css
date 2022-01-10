@@ -52,6 +52,13 @@ header {
 
 .card-body {
   min-height: 100px;
+  position: relative;
+}
+
+.copy-btn {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
 }
 
 .card-footer {
