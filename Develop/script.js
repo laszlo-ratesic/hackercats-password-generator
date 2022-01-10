@@ -203,3 +203,16 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+
+// Reference the copy button
+const copyBtn = document.getElementById("copy-btn");
+const copyPass = document.getElementById("password");
+
+// Copy function
+function copyPassword() {
+  copyPass.select();
+  document.execCommand("copy");
+};
+
+// Add event listener to copy button
+copyBtn.addEventListener("click", copyPassword);
