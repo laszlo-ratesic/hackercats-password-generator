@@ -1,4 +1,5 @@
 // Assignment code here
+// Create object to store password specs
 var passwordInfo = {
   length: "",
   lowercase: false,
