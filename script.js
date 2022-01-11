@@ -17,12 +17,16 @@ function writePassword() {
   );
 
   // Ensure length value meets requirements
-  while (isNaN(passwordInfo.length) || passwordInfo.length < 8 || passwordInfo.length > 128) {
+  while (
+    isNaN(passwordInfo.length) ||
+    passwordInfo.length < 8 ||
+    passwordInfo.length > 128
+  ) {
     writePassword();
   }
 
   // Collect prompt information from user while updating info object
-  function characterTypes() {
+  function passPrompts() {
     passwordInfo.lowercase = window.confirm(
       "🐱‍💻 Rad. Would you like lowercase characters included in your password?"
     );
@@ -36,46 +40,19 @@ function writePassword() {
       "🐱‍💻 Almost done. Wanna throw some special characters into the mix?"
     );
   }
-  characterTypes();
+  passPrompts();
 
-  // Ensure at least one character type is selected
-  function checkArray() {
-    console.log(passwordInfo);
-
-    // Convert object values into an array
-    var passwordArray = Object.values(passwordInfo);
-
-    // Removes length value
-    passwordArray.shift();
-    console.log(passwordArray);
-
-    // Checks whether all prompts were false
-    var allFalse = true;
-    for (let i = 0; i < passwordArray.length; i++) {
-      // If even one value is true then move on
-      if (passwordArray[i] === true) {
-        allFalse = false;
-        break;
-      }
-    }
-
-    // If all are still false, then...
-    if (allFalse) {
-      // ...alert user...
-      window.alert(
-        "🐱‍💻 Wuh oh! You need to select at least one character type!"
-      );
-
-      // ...re-run prompts...
-      characterTypes();
-
-      // ...and re-run check
-      checkArray();
-    }
+  while (
+    !passwordInfo.lowercase &&
+    !passwordInfo.uppercase &&
+    !passwordInfo.numeric &&
+    !passwordInfo.special
+  ) {
+    window.alert(
+      "🐱‍💻 Wuh oh! You need to select at least one character type!"
+    );
+    passPrompts();
   }
-
-  // Original function call to check prompts
-  checkArray();
 
   // If prompts are successful alert user
   window.alert("🐱‍💻 Alright, alright, alright! Enjoy your new password!");
@@ -135,11 +112,10 @@ function writePassword() {
     // Check password to ensure it has array choices
     function checkPassword(arr1, arr2) {
       return arr1.some((characters) => arr2.includes(characters));
-    };
+    }
 
     // Checks to ensure string includes all character types selected
     function finalCheck() {
-
       // Logs the string to be checked
       console.log(str);
 
@@ -148,10 +124,8 @@ function writePassword() {
 
       // Checks string against earlier prompt choices, and...
       if (passwordInfo.lowercase === true) {
-
         // ...returns true if string doesn't contain any characters from specified array
         if (!checkPassword(strArr, lowArr)) {
-
           // alerts developer
           console.log("string did not include lowercase characters.");
 
@@ -206,7 +180,7 @@ const copyPass = document.getElementById("password");
 function copyPassword() {
   copyPass.select();
   document.execCommand("copy");
-};
+}
 
 // Add event listener to copy button
 copyBtn.addEventListener("click", copyPassword);
