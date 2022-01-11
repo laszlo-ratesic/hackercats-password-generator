@@ -16,15 +16,9 @@ function writePassword() {
     "🐱‍💻 Greetings! How long do you want your password to be? (Please enter a number between 8 and 128)"
   );
 
-  // Turn length value into a number
-  passwordInfo.length = parseInt(passwordInfo.length);
-
   // Ensure length value meets requirements
-  switch (true) {
-    case isNaN(passwordInfo.length):
-    case passwordInfo.length < 8:
-    case passwordInfo.length > 128:
-      writePassword();
+  while (isNaN(passwordInfo.length) || passwordInfo.length < 8 || passwordInfo.length > 128) {
+    writePassword();
   }
 
   // Collect prompt information from user while updating info object
