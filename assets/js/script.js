@@ -89,6 +89,7 @@ function generatePassword() {
 
 // Checks earlier choices and adds selected character types to the choices array
 function compileChoices() {
+  choices = [];
   // References the values in passwordInfo object
   var passChoices = Object.values(passwordInfo);
 
