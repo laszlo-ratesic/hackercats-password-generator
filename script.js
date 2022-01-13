@@ -37,20 +37,24 @@ var nameArr = ["lowercase", "uppercase", "numeric", "special"];
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
-// Collect prompt information from user while updating info object
-function passPrompts() {
+function getLength() {
   passwordInfo.length = window.prompt(
     "🐱‍💻 Greetings! How long do you want your password to be? (Please enter a number between 8 and 128)"
   );
 
-  // Ensure length value meets requirements
-  while (
+   // Ensure length value meets requirements
+   while (
     isNaN(passwordInfo.length) ||
     passwordInfo.length < 8 ||
     passwordInfo.length > 128
   ) {
-    passPrompts();
+    getLength();
   }
+}
+
+// Collect prompt information from user while updating info object
+function passPrompts() {
+  getLength();
   passwordInfo.lowercase = window.confirm(
     "🐱‍💻 Rad. Would you like lowercase characters included in your password?"
   );
