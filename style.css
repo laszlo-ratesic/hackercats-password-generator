@@ -70,6 +70,10 @@ header {
   border: 2px dashed #c0c7cf;
 }
 
+#copy-btn:focus {
+  border: 2px solid black;
+}
+
 .card-footer {
   text-align: center;
 }
