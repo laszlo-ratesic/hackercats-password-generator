@@ -1,4 +1,4 @@
-# Password Generator 🐱‍💻
+# HackerCat's Password Generator 🐱‍💻
 
 HackerCat is pleased to present their super-secure password generator just like you like it
 
@@ -27,7 +27,7 @@ HackerCat is pleased to present their super-secure password generator just like 
 🐱‍💻 And of course, I've always appreciated a little extra "umph", hence the impromptu copy button, the hackercat emoji, and the subsequent personality injected into the prompt statements.
 
 ## Table of Contents
-- [Password Generator 🐱‍💻](#password-generator-)
+- [Password Generator 🐱‍💻](#hackercats-password-generator-)
   - [Description](#description)
   - [Table of Contents](#table-of-contents)
   - [Installation](#installation)
@@ -47,7 +47,7 @@ Replacing the above placeholder with the link copied from GitHub. This will clon
 ## Usage
 This code is strictly for use as HackerCat intended 🐱‍💻 and is only provided as material for study and otherwise double-checking implementation of various basic javascript functionality. Screenshots of original mockup are included.
 
-   ![Mockup of Keenan Chiasson's Password Generator.](./assets/images/mockup.gif)
+   ![Mockup of HackerCat's Password Generator.](./assets/images/mockup.gif)
 
 ## Credits
 UT Austin Coding Boot Camp https://techbootcamps.utexas.edu/coding/
