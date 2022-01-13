@@ -4,7 +4,7 @@ HackerCat is pleased to present their super-secure password generator just like 
 
 ## Description
 
-🔐 This repository contains the completed code for a password generator projected request by an anonymous client. This project began from a starter code file graciously provided by the UT Austin Full-Stack Coding Boot Camp. Our user story here is about an employee with access to lots of sensitive data, in need of a program to generate strong passwords in order to provide greater security.
+🔐 This repository contains the completed code for a password generator project request by an anonymous client. This project began from a starter code file graciously provided by the UT Austin Full-Stack Coding Boot Camp. Our user story here is about an employee with access to lots of sensitive data, in need of a program to generate strong passwords in order to provide greater security.
 
 🏗️ The provided starter code took care of the basic process of rendering whatever text I wanted to generate in my generatePassword() function, but that was about it. Aside from a couple variables, an undeclared function, an event listener, and a few query selectors there was nothing provided in the way of actually generating the password.
 
@@ -20,11 +20,11 @@ HackerCat is pleased to present their super-secure password generator just like 
 
 🧵 To start with, an empty array was updated to contain all the characters from the user's specified criteria types. This began as a series of if statements that was later refactored into a for loop. An empty string is then updated with a random character from the larger array of character types to create the initial password. Then the check occurs.
 
-✔️ I created a finalCheck() function that compares the fresh password against an array of the characters that should be included. If there are no characters from even one array of the user's choosing, the addCharacters() function that actually updates the string was re-run along with a message in the console alerting the user that the original password did not contain X characters.
+✔️ I created a finalCheck() function that compares the fresh password against an array of the characters that should be included. If there are no characters from even one array of the user's choosing, the addCharacters() function that actually updates the string is re-run along with a message in the console alerting the user that the original password did not contain X characters.
 
-👀 I understand that this type of check-system was outside the scope of the project, and I am glad to say that I consider the check-system to be vital to the success of this project as a simulation of real-world program-building. There will always be a chance for shoddy code to make it through to production, but it's here that we should begin developing best practices for functional code that does what it says it should do.
+👀 I understand that this type of check-system was outside the scope of the project, and I am glad to say that I consider the check-system to be vital to the success of this project as a simulation of real-world programming. There will always be a chance for shoddy code to make it through to production, but it's here that we should begin developing best practices for functional code that does what it says it should do. I'm excited to some day learn to implement actual tests for my projects.
 
-🐱‍💻 And of course, I've always appreciated a little extra umph, hence the impromptu copy button, the hackercat emoji, and the subsequent personality injected into the prompt statements.
+🐱‍💻 And of course, I've always appreciated a little extra "umph", hence the impromptu copy button, the hackercat emoji, and the subsequent personality injected into the prompt statements.
 
 ## Table of Contents
 - [Password Generator 🐱‍💻](#password-generator-)
