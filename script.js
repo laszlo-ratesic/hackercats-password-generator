@@ -42,8 +42,8 @@ function getLength() {
     "🐱‍💻 Greetings! How long do you want your password to be? (Please enter a number between 8 and 128)"
   );
 
-   // Ensure length value meets requirements
-   while (
+  // Ensure length value meets requirements
+  while (
     isNaN(passwordInfo.length) ||
     passwordInfo.length < 8 ||
     passwordInfo.length > 128
@@ -54,7 +54,6 @@ function getLength() {
 
 // Collect prompt information from user while updating info object
 function passPrompts() {
-  getLength();
   passwordInfo.lowercase = window.confirm(
     "🐱‍💻 Rad. Would you like lowercase characters included in your password?"
   );
@@ -67,7 +66,6 @@ function passPrompts() {
   passwordInfo.special = window.confirm(
     "🐱‍💻 Almost done. Wanna throw some special characters into the mix?"
   );
-
   // Prevent user from not choosing any parameters
   while (
     !passwordInfo.lowercase &&
@@ -80,17 +78,16 @@ function passPrompts() {
     );
     passPrompts();
   }
-  // If prompts are successful alert user
-  window.alert("🐱‍💻 Alright, alright, alright! Enjoy your new password!");
 }
 
+// ✨ Where the magic really happens ✨
 function generatePassword() {
   compileChoices();
   finalCheck();
   return str;
 }
 
-// Checks earlier choices and adds selected character types to the
+// Checks earlier choices and adds selected character types to the choices array
 function compileChoices() {
   // References the values in passwordInfo object
   var passChoices = Object.values(passwordInfo);
@@ -133,13 +130,10 @@ function finalCheck() {
 
   // Loops through user-selected booleans
   for (let i = 0; i < passChoices.length; i++) {
-
     // If they selected a certain criteria...
     if (passChoices[i]) {
-
       // ...check our password for that criteria, and if it's not there...
       if (!checkPassword(strArr, typeArr[i])) {
-
         // ...alert the developer...
         console.log("string did not include " + nameArr[i] + " characters.");
 
@@ -160,9 +154,14 @@ function checkPassword(arr1, arr2) {
 
 // Write password to the #password input
 function writePassword() {
+  getLength();
   passPrompts();
 
   var password = generatePassword();
+
+  // If all prompts are successful alert user
+  window.alert("🐱‍💻 Alright, alright, alright! Enjoy your new password!");
+
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
