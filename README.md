@@ -47,7 +47,7 @@ Replacing the above placeholder with the link copied from GitHub. This will clon
 ## Usage
 This code is strictly for use as HackerCat intended 🐱‍💻 and is only provided as material for study and otherwise double-checking implementation of various basic javascript functionality. Screenshots of original mockup are included.
 
-   ![Mockup of Keenan Chiasson's Password Generator.](./mockup.gif)
+   ![Mockup of Keenan Chiasson's Password Generator.](./assets/images/mockup.gif)
 
 ## Credits
 UT Austin Coding Boot Camp https://techbootcamps.utexas.edu/coding/
